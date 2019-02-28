@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <title>Тестовое задание Kodix</title>
+</head>
+
+<body>
+  <div class="page-body">
+    <header class="page-header">
+      <section class="logo">
+        <div class="logo__wrapper">
+          <img src="./img/duck-logo-mobile.png" alt="logo-company">
+        </div>
+      </section>
+    </header>
+
+    <main class="page-main">
+      <section class="header-content">
+        <h1 class="header-content__h1">&#161;Ay caramba!</h1>
+        <div>
+          <form class="form" action="">
+            <div class="form__wrapper">
+              <label class="form__label">
+                <p class="form__text">Название</p>
+                <input class="form__input-name" type="text" placeholder="Название">
+              </label>
+
+
+              <!-- <div class="form__label-wrapper"> -->
+              <label class="form__label form__label--second">
+                <p class="form__text">Цена</p>
+                <input class="form__input-name" type="text" placeholder="Цена">
+              </label>
+              <label class="form__label form__label--second">
+                <p class="form__text">Год</p>
+                <input class="form__input-name" type="text" placeholder="Год">
+              </label>
+              <!-- </div> -->
+            </div>
+
+
+            <div>
+              <label>
+                <p class="form__text">Описание</p>
+                <input class="form__input-name form__input-name--description" type="text" placeholder="Описание">
+              </label>
+
+            </div>
+
+            <div>
+              <div>
+                <p class="form__text form__text--second">Цвет</p>
+                <div>
+                  <label class="form__label-radio">
+                    <input class="form__input-radio" type="radio" value="white" name="color" checked="checked">
+                    <span class="form__custom-radio circle circle--white"></span>
+                  </label>
+
+                  <label class="form__label-radio">
+                    <input class="form__input-radio" type="radio" value="black" name="color">
+                    <span class="form__custom-radio circle circle--black"></span>
+                  </label>
+
+                  <label class="form__label-radio">
+                    <input class="form__input-radio" type="radio" value="gray" name="color">
+                    <span class="form__custom-radio circle circle--gray"></span>
+                  </label>
+
+                  <label class="form__label-radio">
+                    <input class="form__input-radio" type="radio" value="red" name="color">
+                    <span class="form__custom-radio circle circle--red"></span>
+                  </label>
+
+                  <label class="form__label-radio">
+                    <input class="form__input-radio" type="radio" value="green" name="color">
+                    <span class="form__custom-radio circle circle--green"></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form__wrapper form__wrapper--second">
+                <select class="form__select" name="">
+                  <option class="" value="" selected="selected" disabled="disabled">Статус</option>
+                  <option class="" value="">В наличии</option>
+                  <option class="" value="">Ожидается</option>
+                  <option class="" value="">Нет в наличии</option>
+                </select>
+
+                <button class="form__btn" type="submit">отправить
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="14" viewBox="0 0 10 14">
+                    <path fill="#fff" d="M.99 10.85L4.87 7 1 3.15 3.17.98l5.84 5.78-.24.24.24.24L3.17 13z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+
+      </section>
+
+      <section class="main-content">
+        <h2 class="table__h2">Автомобили в наличии</h2>
+        <div class="header-content header-content--second">
+          <div class="table__header">
+            <p style="flex-basis: 20%;">Название</p>
+            <p style="flex-basis: 10%;">Цвет</p>
+            <p style="flex-basis: 10%;">Цена</p>
+            <p style="flex-basis: 31%;">Доп. опции</p>
+            <p style="flex-basis: 10%;">Год</p>
+            <p>Статус</p>
+          </div>
+
+          <div id="car">
+            <article class="car-item" v-for="item in items" :key="item.id">
+              <div class="car-item__wrapper">
+                <p class="car-item__text car-item__text--name">{{ item.title }}</p>
+                <span class="form__custom-radio circle" v-bind:class="'circle--' + item.color"></span>
+                <p class="car-item__text">{{ item.price }}</p>
+              </div>
+              <div class="car-item__wrapper car-item__wrapper--second">
+                <p class="car-item__dop">{{ item.description }}</p>
+              </div>
+              <div class="car-item__wrapper car-item__wrapper--second car-item__wrapper--third">
+                <time class="car-item__text">{{ item.year }}</time>
+                <!-- <p class="car-item__text">{{ item.status }}</p> -->
+                <p class="car-item__text" v-if="item.status === 'pednding'">Ожидается</p>
+                <p class="car-item__text" v-if="item.status === 'out_of_stock'">Нет в ниличии</p>
+                <p class="car-item__text" v-if="item.status === 'in_stock'">В наличии</p>
+                <button v-on:click="removeElement" class="car-item__btn" type="button">Удалить</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <section class="logo">
+        <div class="copyright">
+          <p class="copyright__text">&copy; 2015 CAPTAIN QUACK</p>
+          <p class="copyright__text">Десница тысячелетия и моллюск!</p>
+        </div>
+      </section>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
