@@ -1,0 +1,82 @@
+.car-item {
+  padding: 20px 0;
+  border-top: 1px solid #e3e4e4;
+  background-color: #f5f6f6;
+
+
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    &--second {
+      align-items: center;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #323232;
+
+    &--name {
+      width: 44%;
+    }
+  }
+
+
+  &__dop {
+    font-size: 13px;
+    color: #8b9497;
+  }
+
+  &__btn {
+    width: 100%;
+    max-width: 75px;
+    padding: 9px 0;
+
+    color: #ffffff;
+
+    background-color: #282d30;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (min-width: 720px) {
+  .car-item {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 10px;
+
+    &__wrapper {
+      flex-basis: 41%;
+      padding: 0;
+
+      &--second {
+        padding-left: 10px;
+        padding-right: 0;
+        flex-basis: 35%;
+      }
+
+      &--third {
+        flex-basis: 34%;
+        padding-right: 10px;
+      }
+    }
+
+
+    &__btn {
+      background-color: transparent;
+      color: #9ca3a6;
+
+      &:hover {
+        background-color: #282d30;
+        color: #ffffff;
+      }
+    }
+  }
+}

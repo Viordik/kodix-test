@@ -1,0 +1,18 @@
+.header-content {
+  max-width: 976px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  &--second {
+    margin: 0 -10px;
+  }
+
+  &__h1 {
+    padding: 33px 0;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 1;
+    text-align: center;
+    color: #282d30;
+  }
+}

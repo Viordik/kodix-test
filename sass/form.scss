@@ -1,0 +1,156 @@
+.form {
+  &__text {
+    padding-bottom: 10px;
+
+    font-size: 18px;
+    color: #d3d3d3;
+
+    visibility: hidden;
+
+    &--second {
+      visibility: visible;
+    }
+  }
+
+  &__input-name {
+    width: 100%;
+    // max-width: 340px;
+    margin-bottom: 15px;
+    padding: 14px 10px;
+
+    font-size: 18px;
+    font-family: "Roboto";
+
+    border: 2px solid #dcdcdc;
+    outline: none;
+
+    &:hover {
+      border-bottom-color: #c4092f;
+
+      transition: border 0.5s;
+
+      // & ~ p {
+      //   visibility: visible;
+      //   opacity: 1;
+
+      //   transition: visibility 0s, opacity 0.5s;
+      // }
+    }
+
+    &:focus {
+      border-bottom-color: #111111;
+
+      transition: border 0.5s;
+    }
+
+    &--description {
+      max-width: 958px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &--second {
+      flex-wrap: nowrap;
+      margin: 25px 0;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    max-width: 340px;
+    // width: 47%;
+
+    &--second {
+      display: inline-block;
+      width: 47%;
+    }
+  }
+
+  &__label-radio {
+    cursor: pointer;
+    margin-right: 20px;
+
+    &:hover > span {
+      border: 4px solid #c4092f;
+
+      transition: border 0.25s;
+    }
+  }
+
+  &__input-radio {
+    display: none;
+
+
+
+    &:checked + span {
+      border: 4px solid #c4092f;
+
+      transition: border 0.5s;
+    }
+  }
+
+  &__select {
+    max-width: 160px;
+    width: 100%;
+    padding: 14px 10px;
+    font-size: 12px;
+    color: #999999;
+    outline: none;
+    border: 2px solid #dcdcdc;
+
+
+    &:focus {
+      border-bottom: 2px solid #111111;
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    max-width: 160px;
+    width: 100%;
+    background-color: #c4092f;
+    border: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 13px 0;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+}
+
+
+@media screen and (min-width: 720px) {
+  .form {
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__input-name {
+      // max-width: 220px;
+
+      &--description {
+        max-width: 958px;
+      }
+    }
+
+    &__label {
+      width: 100%;
+      max-width: 220px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 976px) {
+  .form {
+    &__label {
+      max-width: 306px;
+    }
+  }
+}
