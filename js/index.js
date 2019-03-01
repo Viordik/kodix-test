@@ -6,8 +6,13 @@ var vm = new Vue({
       { pednding: 'Ожидается' },
       { out_of_stock: 'Нет в ниличии' },
       { in_stock: 'В наличии' }
-    ]
-
+    ],
+    name: null,
+    price: null,
+    year: null,
+    description: null,
+    color: null,
+    statuses: null
   },
   created: function () {
     this.loadQuote();
@@ -27,13 +32,20 @@ var vm = new Vue({
     removeElement: function (index) {
       this.items.splice(index, 1);
       console.log('Элемент был удален');
+    },
+    addItem: function () {
+      this.items.push(1);
+      console.log('Элемент был добавлен');
     }
   },
-  // computed: {
-  //   colorClass: function () {
-  //     return {
-  //       white: this.white
-  //     };
-  //   }
-  // },
 });
+
+
+// Vue.component('addCar', {
+//   data: function addItem() {
+//     this.items.push({
+//       name: '',
+//     });
+//   },
+//
+// });
