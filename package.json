@@ -39,8 +39,5 @@
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^3.0.0",
     "run-sequence": "^1.2.2"
-  },
-  "dependencies": {
-    "jquery": "^3.3.1"
   }
 }

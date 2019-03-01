@@ -54,7 +54,8 @@
               <div>
                 <label>
                   <p class="form__text">Описание</p>
-                  <input class="form__input-name form__input-name--description" type="text" placeholder="Описание" maxlength="50" v-model="description">
+                  <input class="form__input-name form__input-name--description" type="text" placeholder="Описание"
+                    maxlength="50" v-model="description">
                 </label>
 
               </div>
@@ -143,6 +144,24 @@
                   <button v-on:click="removeElement(index)" class="car-item__btn" type="button">Удалить</button>
                 </div>
               </article>
+
+
+
+              <!-- <article class="car-item">
+                <div class="car-item__wrapper">
+                  <p class="car-item__text car-item__text--name">{{ name }}</p>
+                  <span class="form__custom-radio circle"></span>
+                  <p class="car-item__text"></p>
+                </div>
+                <div class="car-item__wrapper car-item__wrapper--second">
+                  <p class="car-item__dop"></p>
+                </div>
+                <div class="car-item__wrapper car-item__wrapper--second car-item__wrapper--third">
+                  <time class="car-item__text"></time>
+                  <p class="car-item__text"></p>
+                  <button v-on:click="removeElement(index)" class="car-item__btn" type="button">Удалить</button>
+                </div>
+              </article> -->
 
             </div>
           </div>
