@@ -34,18 +34,13 @@ var vm = new Vue({
       console.log('Элемент был удален');
     },
     addItem: function () {
-      this.items.push(1);
+      this.items.push({});
       console.log('Элемент был добавлен');
     }
   },
 });
 
 
-// Vue.component('addCar', {
-//   data: function addItem() {
-//     this.items.push({
-//       name: '',
-//     });
-//   },
-//
-// });
+Vue.component('carNew', {
+  template: '<article class="car-item"><div class="car-item__wrapper"><p class="car-item__text car-item__text--name">{{ name }}</p><span class="form__custom-radio circle"></span><p class="car-item__text"></p></div><div class="car-item__wrapper car-item__wrapper--second"><p class="car-item__dop"></p></div><div class="car-item__wrapper car-item__wrapper--second car-item__wrapper--third"><time class="car-item__text"></time><p class="car-item__text"></p><button v-on:click="removeElement(index)" class="car-item__btn" type="button">Удалить</button></div></article>'
+});
